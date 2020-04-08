@@ -26,23 +26,15 @@ class FirstFragment : Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         setnamewhentextchanged(view.findViewById<TextInputEditText>(R.id.textInputTextName), "Name")
-
         setnamewhentextchanged(view.findViewById<TextInputEditText>(R.id.textInputTextNpm), "Npm")
-
         setnamewhentextchanged(view.findViewById<TextInputEditText>(R.id.textInputTextEmail), "Email")
-
         setnamewhentextchanged(view.findViewById<TextInputEditText>(R.id.textInputTextGithub), "Github")
-
         setnamewhentextchanged(view.findViewById<TextInputEditText>(R.id.textInputTextGithub), "Web")
-
     }
-
     fun setnamewhentextchanged(txtinput: TextInputEditText, type: String) {
         txtinput.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
-
             override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
                 if (type == "Name") {
                     communicationViewModel!!.setName(charSequence.toString())
@@ -56,11 +48,9 @@ class FirstFragment : Fragment(){
                     communicationViewModel!!.setWeb(charSequence.toString())
                 }
             }
-
             override fun afterTextChanged(editable: Editable) {}
         })
     }
-
     companion object {
         fun newInstance(): FirstFragment {
             return FirstFragment()

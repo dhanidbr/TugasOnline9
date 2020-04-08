@@ -12,27 +12,17 @@ FragmentManager) :
     FragmentPagerAdapter(fm) {
     override fun getItem(position: Int): Fragment {
         return when (position){
-            0 -> {
-                FirstFragment.newInstance()
-            }
-            1 -> {
-                SecondFragment.newInstance()
-            }
-            else -> {
-                ThirdFragment.newInstance()
-            }
+            0 ->    {   FirstFragment.newInstance()     }
+            1 ->    {   SecondFragment.newInstance()    }
+            else -> {   ThirdFragment.newInstance()     }
         }
-
     }
-
     override fun getPageTitle(position: Int): CharSequence? {
         return mContext.resources.getString(TAB_TITLES[position])
     }
-
     override fun getCount(): Int {
         return 3
     }
-
     companion object {
         @StringRes
         private val TAB_TITLES = intArrayOf(

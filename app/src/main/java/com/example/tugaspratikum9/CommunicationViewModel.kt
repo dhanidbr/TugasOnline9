@@ -19,19 +19,15 @@ class CommunicationViewModel : ViewModel() {
     fun setName(name: String) {
         mName.value = name
     }
-
     fun setNpm(npm: String){
         mNPM.value = npm
     }
-
     fun setEmail(email: String){
         mEmail.value = email
     }
-
     fun setGithub(github: String){
         mGithub.value = github
     }
-
     fun setWeb(web: String) {
         mWeb.value = web
     }

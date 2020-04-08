@@ -22,7 +22,6 @@ class SecondFragment : Fragment() {
         communicationViewModel =
             ViewModelProviders.of(requireActivity()).get(CommunicationViewModel::class.java)
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -32,7 +31,6 @@ class SecondFragment : Fragment() {
             container, false
         )
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         txtName = view.findViewById(R.id.textViewNama)
@@ -54,7 +52,6 @@ class SecondFragment : Fragment() {
         communicationViewModel!!.github.observe(requireActivity(),
             Observer { s -> txtGithub!!.text = s })
     }
-
     companion object {
         fun newInstance(): SecondFragment {
             return SecondFragment()

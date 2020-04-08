@@ -17,26 +17,18 @@ class ThirdFragment : Fragment() {
         communicationViewModel =
             ViewModelProviders.of(requireActivity()).get(CommunicationViewModel::class.java)
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_third, container, false)
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val webView: WebView? = view.findViewById(R.id.webView)
-
-        // Set webView
         webView!!.settings.javaScriptEnabled = true
         communicationViewModel!!.web.observe(requireActivity(), Observer { s -> url = s })
-
-        // webView page load sesuai parameter url
         webView.loadUrl("https://$url")
     }
-
-    //Menjalankan instance fragment
     companion object {
         fun newInstance(): ThirdFragment {
             return ThirdFragment()
